@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
+body{
+ font-family: 'Karla', sans-serif;
+ font-family: 'Roboto', sans-serif;
+ background-color:rgb(215, 213, 213);
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+/* menu princiapal ----------------------*/
+.contend__nav{
+ width: 100%;
+ height: 100px;
+ margin: 0;
+ padding: 0;
+}
+
+/* logo alura --- */
+.box_img--alura{
+ position: absolute;
+ /* width: 100%; */
+ height: 70px;
+ left: 30px;
+ 
+}
+    
+.img_alura-logo{
+ border-radius: 50%;
+ position: relative;
+ padding: 5px 0px 5px 0px;
+ width: 70px;
+ height: 70px;
+}
+
+.menu__nav{
+ width: 100%;
+ position: relative;
+ /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
+ height: 80px;
+ margin: 0;
+ padding: 0;
+}
+
+.nav__list{
+ position: relative;
+ display: flex;
+ list-style: none;
+ justify-content: center;
+ margin: 0;
+ padding:30px 0px 20px 30px;
+}
+
+.nav__list li{
+ position: relative;
+ padding: 0px 30px 10px 30px;
+ display: block;
+ overflow: hidden;
+}
+
+.nav__list a{
+ color: #ffffff;
+ text-decoration: none; 
+}
+
+/* animacion menu navegacion ----*/
+.nav__list a::after{
+ content: "";
+ position: absolute;
+ background-color: #ffffff;
+ width: 100%;
+ height: 3px;
+ bottom: 0;
+ left:-145px;
+ transition: .3s ease-in-out all;
+}
+
+.nav__list a:hover::after{
+ left: 0;
+}
+
+/* ------------------------------cuerpo del encriptador --------------*/
+
+main{
+display:grid;
+grid-template-columns:1fr 1fr;
+
+}
+
+.box_texarea{
+ width: 100%;
+ height:500px;
+ margin: 50px 0px 0px 100px;
+}
+
+.texarea{
+ position: absolute;
+ width: 400px;
+ height:300px;
+ border: none;
+ font-size: 25px;
+ background-color:transparent;
+ border-radius: 10px;
+ color: #2575fc;
+ cursor: pointer;
+ font-family:'Karla', sans-serif ;
+}
+
+.texarea::placeholder{
+ padding: 20px;
+ color: #2575fc;
+}
+
+.texarea:focus::placeholder{
+ color: transparent;
+}
+
+.texarea:focus{
+ border: none;
+ outline: none;
+}
+
+
+/* caja alert ---*/
+
+.box_alerta{
+ width: 100%;
+ margin: 0px 0px 0px 100px;
+}
+
+.box_alerta span{
+ color: rgb(104, 103, 103);
+
+}
+
+.icono_alert{
+ font-size: 20px;
+ color: rgb(104, 103, 103);
+ padding:10px;
+}
+
+/* caja botones ---*/
+.box_btn{
+width: 100%;
+margin: 0px 0px 0px 100px;
+justify-content: center;
+}
+
+.box_btn .btn_encriptar{
+ width: 250px;
+ cursor: pointer;
+ margin: 0px 0px 0px 50px;
+ height: 70px;
+ border: none;
+ border-radius: 30px;
+ background-color: #093785;
+ color: #ffffff;
+ font-size: 18px;
+ transition: .3s ease-in-out all;
+}
+
+.box_btn .btn_encriptar:hover{
+ background-color: #2575fc;
+}
+
+.box_btn .btn_desencriptar{
+  width: 250px;
+ cursor: pointer;
+ margin: 0px 0px 0px 50px;
+ height: 70px;
+ border: none;
+ border-radius: 30px;
+ background-color: transparent;
+ border: solid #5d5c5c 3px;
+ color: #5d5c5c;
+ font-size: 18px;
+ transition: .3s ease-in-out all;
+}
+
+.box_btn .btn_desencriptar:hover{
+ background-color: #093785;
+ color: #ffffff;
+ border: none;
+}
+
+/*-------------------------------- banner lateral -------------------*/
+.banner_lateral{
+ width:100%;
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+ margin-right: 20px;
+ box-sizing: border-box;
+ position: relative;
+ top: 50px;
+ transition: .3s ease-in-out all;
+}
+
+.content__banner{
+ background-color: #ffffff;
+ padding: 10px 30px 10px 30px;
+ border-radius: 20px;
+ box-shadow: 0px 0px 15px 0px grey;
+}
+
+.box_banner-img{
+ /* background-color: #ffffff; */
+ box-shadow: solid grey ;
+}
+
+.buscar-img{
+ width: 300px;
+ height: 300px;
+ border-radius:10px;
+}
+
+
+.box_mensaje{
+    width:250px;
+    position: relative;
+    margin-left: 0;
+}
+
+.box_mensaje h3{
+    font-size: 18px;
+    color: #5d5c5c;
+    position: relative;
+}
+
+.box_mensaje_text{
+ color: #87888a;
+ font-weight: 500;
+ font-size: 18px;
+}
+
+.box__btn-copiar{
+width: 200px;
+display: flex;
+justify-content: center;
+}
+
+.box__btn-copiar input{
+ border: none;
+ background-color: #2575fc;
+ color: #ffffff;
+ border-radius: 10px;
+ width: 150px;
+ height: 60px;
+ cursor: pointer;
+ margin: 30px 0px 0px;
+ font-size: 18px;
+ transition: .3s ease-in-out all;
+}
+
+.box__btn-copiar input:hover{
+ background-color: #093785;
+ color: #ffffff;
+}
+
+/* tex area desencriptar */
+.text__desencriptar{
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+}
+    
+.text__desencriptar::placeholder{
+color: #2575fc;
+font-family: 'Karla', sans-serif;
+padding: 10px;
+font-weight: 500;
+}
+    
+.text__desencriptar:focus{
+border: none;
+outline: none;
+}
+    
+.text__desencriptar:focus::placeholder{
+color: transparent;
+}
+
+.ocultar{
+display: none;
+}
+
+/* media querys -----*/
