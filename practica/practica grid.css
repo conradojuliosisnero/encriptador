@@ -1,0 +1,78 @@
+body{
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ background-color: #000000;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+section{
+ width:900px;
+ height: 100vh;
+ /* background-color: #c7c3c3; */
+}
+
+.grid_container{
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ grid-template-rows: repeat(4,1fr);
+ width: 100%;
+ height: 100%;
+ grid-gap: 10px;
+ background-color: #ffffff;
+ /* grid areas especificadas */
+ grid-template-areas: 
+ "nav     nav       nav       nav"
+ "aside-1 contenido contenido aside-2"
+ "aside-1 widget    widget    aside-2"
+ "footer  footer    footer    footer"
+ ;
+}
+
+.grid_container .nav{
+ background-color: #23e3aa;
+ grid-area: nav;
+}
+
+.grid_container .aside-1{
+ background-color: #0f5ec5;
+ grid-area: aside-1;
+}
+
+.grid_container .contenido{
+ background-color: #681bdb;
+ grid-area: contenido;
+}
+
+.grid_container .widget{
+ background-color: #c11bdb;
+ grid-area: widget;
+}
+
+.grid_container .aside-2{
+ background-color: #db1b8b;
+ grid-area: aside-2;
+}
+
+.grid_container .footer{
+ background-color: #db1b71;
+ grid-area: footer;
+}
+
+
+
+/* clases generales */
+.grid_container div{
+ width:100%;
+ height: 100%;
+ background-color: #156fe6;
+ color: #ffffff;
+ font-size: 40px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ /* margin: 5px; */
+}
