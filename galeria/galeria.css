@@ -444,17 +444,81 @@ body{
     transform: scaley(1);
 }
 
+/* flores -------------------------------------------*/
+.flores{
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 90px;
+    flex-direction: column;
+}
+
+/* titulos --------------------------------------------*/
+.flores .cards__titulo{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.flores .titulo{
+    color: #000000;
+    font-family: var(--letra1);
+    font-size: 40px;
+    font-weight: 200;
+}
+
+/* contenedor de la galeria  */
+.box__cards__flores{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:repeat(5,210px);
+    gap:.5rem;
+}
+
+/* estilo de las imgenes  */
+.box__cards__flores .cards__img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: .4s ease all;
+}
+
+.box__cards__flores .cards__img .img{
+    width:100%;
+    height:100% ;
+    border-radius: 10px;
+    object-fit: cover;
+    z-index: 1;
+    transition: .4s ease all;
+}
+
+.box__cards__flores .cards__img:hover{
+    z-index: 2;
+    border-radius: 0;
+    transform: scale(1.2);
+    box-sizing: border-box;
+}
+
 
 /* media querys ------------------------------------- */
 
 @media (max-width:800px){
 
     body{
-        background-color: #d8d5d5;
+        background-color: #000000;
     }
     /* colombia */
     .colombia .galeria__titulo .titulo{
-        color: #000000;
+        color: #ffffff;
         font-family: var(--letra2);
         font-size: 23px;
         font-weight: 200;
@@ -472,7 +536,7 @@ body{
 
     /* mexico  */
     .mexico .galeria__titulo .titulo{
-        color: #000000;
+        color: #ffffff;
         font-family: var(--letra2);
         font-size: 23px;
         font-weight: 200;
@@ -491,11 +555,12 @@ body{
 
     .corea .cards__titulo .titulo{
         font-size: 23px;
-
+        color: #ffffff;
     }
 
     .europa .cards__titulo .titulo{
         font-size: 23px;
+        color: #ffffff;
 
     }
 
@@ -508,6 +573,9 @@ body{
         "img3 img3";
     }
 
+    .flores .cards__titulo .titulo{
+        font-size: 23px;
 
+    }
 
 }

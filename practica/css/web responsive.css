@@ -137,17 +137,34 @@ body{
  /* grid-column: span 1; */
  /* grid-area: widget-1; */
 }
-
+/* FOOTER ---------------------------------------------------------*/
 .footer{
- background-color: #1a0d66;
+ background-color: #ffffff;
  color: #ffffff;
  border-radius: 10px;
  /* grid-column: span 3; */
  display: flex;
+ flex-wrap: wrap;
  align-items: center;
- justify-content: center;
+ justify-content:space-between;
  grid-area: footer;
 }
+
+.footer .footer_list{
+ display: flex;
+ list-style: none;
+ flex-direction: column;
+ 
+}
+
+.footer_list li a{
+ color: #000000;
+ cursor: pointer;
+ font-size: 20px;
+
+}
+
+
 
 
 @media screen and (max-width:790px){
