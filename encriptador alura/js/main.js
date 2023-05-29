@@ -1,87 +1,63 @@
-// encriptador de texto challengue oracle ONE
-
 var botonencriptar = document.querySelector(".btn_encriptar");
 var botondesencriptar = document.querySelector(".btn_desencriptar");
 var botonCopiar = document.querySelector(".btn_copiar");
 var textarea = document.querySelector(".texarea");
-var resultado = document.querySelector(".box_resultado");
+var textareaResultado = document.querySelector(".resultado");
+var sectio_2 = document.querySelector(".sectio_2");
+var box_img = document.querySelector(".box_img img");
+var box_mensaje_h3 = document.querySelector(".box_mensaje h3");  // Selecciona el elemento h3
+var box_mensaje_text = document.querySelector(".box_mensaje_text");  // Selecciona el elemento p
 
-botonencriptar.onclick = encriptar;
-botondesencriptar.onclick = desencriptar;
+botonencriptar.addEventListener('click', encriptar);
+botondesencriptar.addEventListener('click', desencriptar);
+botonCopiar.addEventListener('click', copiar);
 
 function encriptar(){
-    ocultaradelante();
     var texarea = recuperartexto()
-    resultado.textContent = encriptartexto(textarea)
+    if (validarTexto(texarea)) {  
+        var textofinal = encriptartexto(texarea);
+        box_mensaje_h3.textContent = textofinal;  // Reemplaza el contenido del h3
+        box_mensaje_text.textContent = "";  // Elimina el contenido del p
+        mostrarresultado();
+    }
 }
 
 function desencriptar(){
-    ocultaradelante();
     var texarea = recuperartexto()
-    resultado.textContent = desencriptartexto(textarea)
+    if (validarTexto(texarea)) {  
+        var texto = desencriptartexto(texarea);
+        box_mensaje_h3.textContent = texto;  // Reemplaza el contenido del h3
+        box_mensaje_text.textContent = "";  // Elimina el contenido del p
+        mostrarresultado();
+    }
 }
+
 
 function recuperartexto(){
-    var texarea =document.querySelector(".texarea")
-    return texarea.value
+    return textarea.value
 }
 
-function ocultaradelante() {
-    botonCopiar.classList.add("ocultar")
-    sectio_2.classList.add("ocultar")
+function mostrarresultado() {
+    botonCopiar.classList.remove("ocultar");
+    sectio_2.classList.remove("ocultar");
+    box_img.classList.add("ocultar");  // Ocultar la imagen
 }
-// funcion de encriptar
-function encriptartexto(){
-    var texto = mensaje;
-    var textofinal = ""; 
 
-    for(var i = 0; i < texto.length; i++){
-        if (texto[i] == "a") {
-            textofinal =textofinal + "ai"
-        } else if(texto[i] == "e"){
-            textofinal = textofinal +"enter"
-        }else if(texto[i] == "i"){
-            textofinal = textofinal +"items"
-        }else if(texto[i] == "o"){
-            textofinal = textofinal +"ober"
-        }else if(texto[i] == "u"){
-            textofinal = textofinal +"ufat"   
-        }
-    }
+function encriptartexto(mensaje){
+    var textofinal = mensaje.replace(/a/g, 'ai').replace(/e/g, 'enter').replace(/i/g, 'items').replace(/o/g, 'ober').replace(/u/g, 'ufat');
     return textofinal;
 }
-// funcion de desencriptar
-function desencriptartexto(mensaje){
-        var texto = mensaje;
-        var textofinal = ""; 
-    
-    for(var i = 0; i < texto.length; i++){
-            if (texto[i] == "a") {
-                textofinal =textofinal + "a"
-                i = i+1;
-            } else if(texto[i] == "e"){
-                textofinal = textofinal +"e"
-                i = i+4;
-            }else if(texto[i] == "i"){
-                textofinal = textofinal +"i"
-                i = i+3;
-            }else if(texto[i] == "o"){
-                textofinal = textofinal +"o"
-                i = i+3;
-            }else if(texto[i] == "u"){
-                textofinal = textofinal +"u"
-                i = i+3;   
-            }else{
-                textofinal =  textofinal + texto[i];
 
-            }
-        }
-        return textofinal;
+function desencriptartexto(mensaje){
+    var texto = mensaje.replace(/ufat/g, 'u').replace(/ober/g, 'o').replace(/items/g, 'i').replace(/enter/g, 'e').replace(/ai/g, 'a');
+    return texto;
 }
-// funcion de copiar
-const copiar = document.querySelector(".btn_copiar")
-    copiar.addEventlistener("click", copiar = () =>{
-    var contenido = document.querySelector(".resultado").textContent;
-    navigator.clipboard.writeText(contenido);
-    console.log("hola")
-})
+
+function copiar(){
+    navigator.clipboard.writeText(textareaResultado.textContent);
+}
+
+function validarTexto(texto) {  // Función para validar el texto
+    const regex = /^[a-z\s]*$/;  // Permite espacios junto con letras minúsculas
+    return regex.test(texto);
+}

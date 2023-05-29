@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +7,17 @@
     <link rel="stylesheet" href="../style/style.css">
     <title>Encriptador</title>
 </head>
-<!-- menu -------------------------------->
-<header class="content__nav">
-    <nav class="menu__nav">
-        <img class="img_alura-logo" src="../../img/alura-logo.png">
-        <!-- <ul class="nav__list">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="encriptador.html">Encriptador</a></li>
-            <li><a href="ayuda.html">ayuda</a></li>
-        </ul> -->
-    </nav>
-</header>
 <body>
+    <header class="container">
+        <div class="container__logo">
+            <img class="img" src="../img/alura-logo.png">
+        </div>
+    </header>
+
     <!-- contenedor del encriptador ---------------------->
     
         <main>
-            <section class="sectio-1">
+            <section class="sectio_1">
             <div class="box_texarea">
                 <textarea class="texarea" placeholder="ingrese el texto aqui"
                  name="" id="" cols="30" rows="10"></textarea>
@@ -33,17 +28,18 @@
             </div>
                 <div class="box_btn">
                     <input class="btn_encriptar" type="button" name="encriptar"
-                    id="btn-encriptar" value="Encriptar">
+                    id="btn-encriptar" value="Encriptar" onclick="btnencriptar()">
 
                     <input class="btn_desencriptar" type="button" name="desencriptar" 
                     id="btn-desencriptar"value="Desencriptar">
                 </div>
             </section>
+            <!-- seccion 2 --------------------------------------------- -->
             <section class="sectio_2">
                 <div class="banner_lateral">
                     <div class="content__banner">
                         <div class="box_img">
-                            <img class="buscar-img" src="../../img/buscar.jpg" alt="">
+                            <img class="buscar-img" src="../img/buscar.jpg" alt="">
                         </div>
                         <div class="box_mensaje">
                            <h3>Ningun mensaje fue encontrado</h3>
@@ -61,10 +57,8 @@
                 </div>
             </section>
         </main>
-  
-    
+    <script src="../js/main.js"></script>
 </body>
-<!-- <script src="../js/main.js"></script> -->
-<script src="https:
-//kit.fontawesome.com/43cf05dd1c.js" crossorigin="anonymous"></script>
+
+
 </html>
