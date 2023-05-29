@@ -40,6 +40,7 @@ function mostrarresultado() {
     botonCopiar.classList.remove("ocultar");
     sectio_2.classList.remove("ocultar");
     box_img.classList.add("ocultar");
+    box_mensaje_text.classList.add("ocultartex");
 }
 
 function encriptartexto(mensaje) {
