@@ -26,7 +26,7 @@ function desencriptar() {
     var texarea = recuperartexto();
     if (validarTextoDesencriptar(texarea)) {
         var texto = desencriptartexto(texarea);
-        box_mensaje_h3.textContent = 'Mensaje Desencriptado';
+        box_mensaje_h3.textContent = 'Mensaje Desencriptado: ';
         box_mensaje_text.textContent = texto;
         mostrarresultado();
     }
